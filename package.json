@@ -28,7 +28,8 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "release": "lerna version --conventional-commits"
+    "release:libs": "lerna version --conventional-commits",
+    "publish:libs": "lerna publish"
   },
   "private": true,
   "dependencies": {
