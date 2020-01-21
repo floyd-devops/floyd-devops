@@ -31,7 +31,6 @@
     "release:libs": "lerna version --conventional-commits",
     "publish:libs": "lerna publish"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^8.2.0",
     "@angular/common": "^8.2.0",

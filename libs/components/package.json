@@ -4,5 +4,6 @@
   "peerDependencies": {
     "@angular/common": "^8.2.11",
     "@angular/core": "^8.2.11"
-  }
+  },
+  "gitHead": "d394b09bb52673209afb0b0b942c8c511eb4ee12"
 }
