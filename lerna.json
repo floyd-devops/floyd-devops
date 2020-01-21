@@ -9,6 +9,9 @@
     },
     "version": {
       "message": "chore(release): release"
+    },
+    "publishConfig": {
+      "access": "public"
     }
   }
 }
