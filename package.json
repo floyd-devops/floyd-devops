@@ -28,8 +28,9 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
+    "build:libs": "ng build core && ng build common && ng build components",
     "release:libs": "lerna version --conventional-commits",
-    "publish:libs": "lerna publish from-git"
+    "publish:libs": "yarn build:libs && lerna publish from-git"
   },
   "dependencies": {
     "@angular/animations": "^8.2.0",
