@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "nx": "nx",
-    "cz": "git-cz",
+    "commit": "git-cz",
     "lerna": "lerna",
     "start": "ng serve",
     "build": "ng build",
@@ -28,7 +28,7 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "versions": "lerna version --conventional-commits"
+    "release": "lerna version --conventional-commits"
   },
   "private": true,
   "dependencies": {
