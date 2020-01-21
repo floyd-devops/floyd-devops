@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/floyd-devops/floyd-devops/compare/v0.2.5...v0.3.0) (2020-01-21)
+
+
+### Bug Fixes
+
+* **components:** fix component text ([ae6b977](https://github.com/floyd-devops/floyd-devops/commit/ae6b9778df83f4ada8edde1143a73d76f52acfea))
+
+
+
+
+
 ## [0.2.5](https://github.com/floyd-devops/floyd-devops/compare/v0.2.4...v0.2.5) (2020-01-21)
 
 **Note:** Version bump only for package @floyd-devops/components
