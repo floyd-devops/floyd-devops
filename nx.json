@@ -17,6 +17,15 @@
     "playground-e2e": {
       "tags": [],
       "implicitDependencies": ["playground"]
+    },
+    "core": {
+      "tags": []
+    },
+    "common": {
+      "tags": []
+    },
+    "components": {
+      "tags": []
     }
   }
 }
