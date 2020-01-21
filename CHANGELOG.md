@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/floyd-devops/floyd-devops/compare/v0.1.0...v0.1.1) (2020-01-21)
+
+
+### Bug Fixes
+
+* **publish:** fix access public ([4cb8c75](https://github.com/floyd-devops/floyd-devops/commit/4cb8c7537f04bfdc416831818403a8dcc0d62ca2))
+
+
+
+
+
 # [0.1.0](https://github.com/floyd-devops/floyd-devops/compare/v0.0.3...v0.1.0) (2020-01-21)
 
 
