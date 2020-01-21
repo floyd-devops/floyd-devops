@@ -29,7 +29,7 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "release:libs": "lerna version --conventional-commits",
-    "publish:libs": "lerna publish"
+    "publish:libs": "lerna publish from-git"
   },
   "dependencies": {
     "@angular/animations": "^8.2.0",
