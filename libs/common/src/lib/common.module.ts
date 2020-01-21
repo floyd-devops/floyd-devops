@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule as AngularCommonModule } from '@angular/common';
+import { CoreModule } from '@floyd-devops/core';
 
 @NgModule({
-  imports: [CommonModule]
+  imports: [AngularCommonModule, CoreModule]
 })
 export class CommonModule {}
