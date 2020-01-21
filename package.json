@@ -31,7 +31,7 @@
     "build:libs": "ng build core && ng build common && ng build components",
     "release:libs": "lerna version --conventional-commits --force-publish --create-release github ",
     "publish:libs": "yarn build:libs && yarn release:libs && lerna publish",
-    "publish:libs:from-git": "yarn build:libs && yarn release:libs && lerna publish from-git"
+    "publish:all": "yarn build:libs && lerna publish --conventional-commits --force-publish --create-release github"
   },
   "dependencies": {
     "@angular/animations": "^8.2.0",
