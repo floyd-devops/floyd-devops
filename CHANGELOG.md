@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/floyd-devops/floyd-devops/compare/v0.2.1...v0.2.2) (2020-01-21)
+
+
+### Bug Fixes
+
+* **components:** fixed text on sidebar ([aebaa6a](https://github.com/floyd-devops/floyd-devops/commit/aebaa6a9108f7e184f14a0498e08c06d21c984ad))
+
+
+
+
+
 ## [0.2.1](https://github.com/floyd-devops/floyd-devops/compare/v0.2.0...v0.2.1) (2020-01-21)
 
 
