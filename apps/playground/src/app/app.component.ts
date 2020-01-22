@@ -9,6 +9,6 @@ import { convertDate } from '@floyd-devops/common';
 export class AppComponent {
   title = 'playground';
   constructor() {
-  this.title = convertDate(1);
+    this.title = convertDate(1);
   }
 }
