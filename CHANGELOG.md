@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/floyd-devops/floyd-devops/compare/v0.3.3...v0.3.4) (2020-01-22)
+
+
+### Performance Improvements
+
+* **playground:** add dummy text to app component ([44a11e6](https://github.com/floyd-devops/floyd-devops/commit/44a11e634b4d16fd15ccc2759e8699836a34d52d))
+
+
+
+
+
 ## [0.3.3](https://github.com/floyd-devops/floyd-devops/compare/v0.3.2...v0.3.3) (2020-01-22)
 
 **Note:** Version bump only for package floyd-devops
