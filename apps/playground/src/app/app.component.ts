@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { convertDate } from '@floyd-devops/common';
 
 @Component({
   selector: 'floyd-devops-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'playground';
+  constructor() {
+  this.title = convertDate(1);
+  }
 }

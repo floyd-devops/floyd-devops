@@ -17,7 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@floyd-devops/core": ["dist/libs/core", "libs/core/src/index.ts"],
-      "@floyd-devops/common": ["dist/libs/common", "libs/common/src/index.ts"],
+      "@floyd-devops/common": ["libs/common/src/index.ts"],
       "@floyd-devops/components": ["dist/libs/components", "libs/components/src/index.ts"]
     }
   },
