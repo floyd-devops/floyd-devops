@@ -2,7 +2,7 @@
   "packages": [
     "libs/*"
   ],
-  "version": "0.5.5",
+  "version": "0.5.6",
   "command": {
     "publish": {
       "conventionalCommits": true
