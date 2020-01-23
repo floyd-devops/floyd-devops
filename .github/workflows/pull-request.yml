@@ -34,8 +34,8 @@ jobs:
       - name: Install environment
         run: yarn
 
-      -name: Format check
-        run: yarn format:check
+#      -name: Format check
+#        run: yarn format:check
 
       - name: Lint
         run: yarn lint
