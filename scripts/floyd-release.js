@@ -1,7 +1,6 @@
 const chalk = require('chalk');
 const yargsParser = require('yargs-parser');
 const childProcess = require('child_process');
-const {execSync} = require('child_process');
 const {buildLibs} = require('./build-libs');
 const {releaseAndPublish} = require('./release-publish-libs');
 
@@ -14,8 +13,6 @@ const parsedArgs = yargsParser(process.argv, {
     h: 'help'
   }
 });
-
-// console.log('parsedArgs', parsedArgs);
 
 if (!parsedArgs.local && !process.env.GH_TOKEN) {
   console.error('process.env.GH_TOKEN is not set');
@@ -52,7 +49,9 @@ function parseVersion(version) {
 const parsedVersion = parseVersion(parsedArgs._[2]);
 if (!parsedVersion.isValid) {
   console.error(
+    chalk.red(
     `\nError:\nThe specified version is not valid. You specified: "${parsedVersion.version}"`
+    )
   );
   console.error(
     `Please run "yarn floyd-release --help" for details on the acceptable version format.\n`
