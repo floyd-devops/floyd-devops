@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/floyd-devops/floyd-devops/compare/v0.3.7...v0.4.0) (2020-01-23)
+
+**Note:** Version bump only for package @floyd-devops/core
+
+
+
+
+
 ## [0.3.7](https://github.com/floyd-devops/floyd-devops/compare/v0.3.6...v0.3.7) (2020-01-23)
 
 **Note:** Version bump only for package @floyd-devops/core
