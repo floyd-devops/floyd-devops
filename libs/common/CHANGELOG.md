@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.6](https://github.com/floyd-devops/floyd-devops/compare/v0.3.5...v0.3.6) (2020-01-23)
+
+
+### Bug Fixes
+
+* **common:** test fix ([c4d3f8f](https://github.com/floyd-devops/floyd-devops/commit/c4d3f8fe0397f61efe751ce78fc4b46ab723c075))
+
+
+
+
+
 ## [0.3.5](https://github.com/floyd-devops/floyd-devops/compare/v0.3.4...v0.3.5) (2020-01-23)
 
 **Note:** Version bump only for package @floyd-devops/common
