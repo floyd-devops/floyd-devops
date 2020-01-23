@@ -3,7 +3,8 @@
   "version": "0.3.4",
   "peerDependencies": {
     "@angular/common": "^8.2.11",
-    "@angular/core": "^8.2.11"
+    "@angular/core": "^8.2.11",
+    "@floyd-devops/core": "^0.3.4"
   },
   "gitHead": "46549563bcec39af3a5f7d41d1017c89ceb4c874",
   "publishConfig": {

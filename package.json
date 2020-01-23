@@ -30,9 +30,11 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "build:libs": "node scripts/build-libs.js",
+    "build:libs:order": "node scripts/build-libs.js $(nx affected:libs)",
     "release:libs": "lerna version --conventional-commits --force-publish --create-release github ",
     "publish:libs": "yarn build:libs && yarn release:libs && lerna publish",
-    "publish:all": "yarn build:libs && lerna publish --conventional-commits --force-publish --create-release github"
+    "publish:all": "yarn build:libs && lerna publish --conventional-commits --force-publish --create-release github",
+    "floyd-release": "node scripts/floyd-release.js"
   },
   "dependencies": {
     "@angular/animations": "^8.2.0",
@@ -74,12 +76,14 @@
     "lerna": "^3.20.2",
     "ng-packagr": "^5.4.0",
     "prettier": "1.18.2",
+    "release-it": "^12.4.3",
     "ts-jest": "24.0.0",
     "ts-node": "~7.0.0",
     "tsickle": "^0.37.0",
     "tslint": "~5.11.0",
     "typescript": "~3.5.3",
-    "webpack": "4.18.1"
+    "webpack": "4.18.1",
+    "yargs-parser": "latest"
   },
   "config": {
     "commitizen": {
