@@ -167,12 +167,13 @@ const options = {
   requireUpstream: false,
   github: {
     preRelease: parsedVersion.isPrerelease,
+    releaseName: "chore(release): ${version}",
     release: false,
     /**
      * The environment variable containing a valid GitHub
      * auth token with "repo" access (no other permissions required)
      */
-    token:  process.env.GH_TOKEN
+    tokenRef: "GH_TOKEN"
   },
   npm: {
     /**
