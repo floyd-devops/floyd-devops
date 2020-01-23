@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.5](https://github.com/floyd-devops/floyd-devops/compare/v0.3.4...v0.3.5) (2020-01-23)
+
+
+
+# 2.0.0 (2020-01-23)
+
+
+### Bug Fixes
+
+* **components:** fix wrong title in sidenav ([e9f2094](https://github.com/floyd-devops/floyd-devops/commit/e9f2094a1ac827d7757b8bf7688a9700ae469c6a)), closes [#1](https://github.com/floyd-devops/floyd-devops/issues/1)
+
+
+
+
+
 ## [0.3.4](https://github.com/floyd-devops/floyd-devops/compare/v0.3.3...v0.3.4) (2020-01-22)
 
 
