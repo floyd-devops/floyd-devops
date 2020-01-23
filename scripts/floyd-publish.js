@@ -68,8 +68,7 @@ buildLibs();
 // RELEASE & PUBLISH
 releaseAndPublish(parsedVersion.version, parsedArgs.force, parsedArgs. yes);
 
-// DONE
-console.log(chalk.green.bold('\n### SUCCESSFULLY RELEASED AND PUBLISHED ALL PACKAGES ###'));
+
 
 
 

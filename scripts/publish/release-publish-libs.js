@@ -8,6 +8,7 @@ const releaseAndPublish = (version, force, yes) => {
   console.log(`> ${relPubCommand}`);
   try {
     execSync(relPubCommand , {stdio: 'inherit'});
+    console.log(chalk.green.bold('\n### SUCCESSFULLY RELEASED AND PUBLISHED ALL PACKAGES ###'));
   } catch (e) {
     throw e;
   }

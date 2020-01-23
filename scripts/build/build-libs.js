@@ -42,10 +42,10 @@ const buildLibs = () => {
       throw new Error();
     }
   });
+  console.log(chalk.green.bold('\n### SUCCESSFULLY BUILT ALL PACKAGES ###'));
 };
 
-// Used for directly invoking buildLibs
-buildLibs();
+
 
 module.exports = {
   buildLibs

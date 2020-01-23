@@ -29,7 +29,7 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "floyd-build": "node scripts/build/build-libs.js",
+    "floyd-build": "node scripts/floyd-build.js",
     "floyd-release": "node scripts/floyd-publish.js"
   },
   "dependencies": {
