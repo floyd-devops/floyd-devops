@@ -1,0 +1,44 @@
+name: Pull Request
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Cache node modules
+            uses: actions/cache@v1
+            with:
+              path: ~/.npm
+              key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+              restore-keys: |
+                ${{ runner.os }}-build-${{ env.cache-name }}-
+                ${{ runner.os }}-build-
+                ${{ runner.os }}-
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install environment
+        run: yarn
+
+      -name: Format check
+        run: yarn format:check
+
+      - name: Lint
+        run: yarn lint
+
+#      - name: Tests coverage
+#        run: npm run test:cov
