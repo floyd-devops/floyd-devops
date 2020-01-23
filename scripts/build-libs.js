@@ -5,9 +5,9 @@ const fs = require('fs');
 const chalk = require('chalk');
 
 // const args = process.argv.splice(2, process.argv.length);
-const affectedLibs = require('./config').libs;
+const libs = require('./config').libs;
 
-const libsDeps = affectedLibs.reduce((obj, lib) => {
+const libsDeps = libs.reduce((obj, lib) => {
   const packageFile = `./libs/${lib}/package.json`;
   if (fs.existsSync(packageFile)) {
     const packageDetails = JSON.parse(fs.readFileSync(packageFile, 'utf8'));
@@ -34,15 +34,27 @@ const buildOrder = Object.keys(libsDeps).sort((a, b) => {
 });
 
 // console.log(chalk.underline(`Build order: ${buildOrder}`));
-buildOrder.forEach(lib => {
-  try {
-    console.log(chalk.blue.bold(`${buildOrder.indexOf(lib) + 1}.${getLibAlias(lib)}`));
-    execSync('ng build ' + lib, {stdio: 'inherit'});
-    console.log(chalk.green('SUCCESS'));
-  } catch (e) {
-    console.log(chalk.red('FAILED'));
-    throw new Error();
-  }
-});
+
+const buildLibs = () => {
+  console.log('BUILDING LIBS AS PACKAGES\n');
+  buildOrder.forEach(lib => {
+    try {
+      let buildCommand = 'ng build ' + lib;
+      console.log(`> ${buildCommand}`);
+      // console.log(chalk.blue.bold(`${buildOrder.indexOf(lib) + 1}.${getLibAlias(lib)}`));
+      execSync(buildCommand, {stdio: 'inherit'});
+      // console.log(chalk.green('SUCCESS'));
+    } catch (e) {
+      // console.log(chalk.red('FAILED'));
+      throw new Error();
+    }
+  });
+};
+
+module.exports = {
+  buildLibs
+};
+
+
 
 

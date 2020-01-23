@@ -2,6 +2,8 @@ const chalk = require('chalk');
 const yargsParser = require('yargs-parser');
 const childProcess = require('child_process');
 const {execSync} = require('child_process');
+const {buildLibs} = require('./build-libs');
+const {releaseAndPublish} = require('./release-publish-libs');
 
 const parsedArgs = yargsParser(process.argv, {
   boolean: ['force', 'yes', 'dry-run', 'help'],
@@ -61,25 +63,13 @@ if (!parsedVersion.isValid) {
 }
 
 //  BUILD
-console.log('Executing build script:');
-// const buildCommand = `./scripts/package.sh ${parsedVersion.version} ${cliVersion} ${typescriptVersion} ${prettierVersion}`;
-const buildCommand = 'node scripts/build-libs.js';
-console.log(`> ${buildCommand}`);
-childProcess.execSync(buildCommand, {
-  stdio: [0, 1, 2]
-});
+buildLibs();
 
 // RELEASE
-// execSync('lerna publish --conventional-commits --force-publish');
-console.log(chalk.underline.green('RELEASE & PUBLISH'));
-try {
-  execSync(`lerna publish --conventional-commits ${parsedVersion.version} ${parsedArgs.force ? '--force-publish' : ''}` , {stdio: 'inherit'});
-} catch (e) {
-  throw e;
-}
+releaseAndPublish(parsedVersion.version, parsedArgs.force, parsedArgs. yes);
 
-
-const DRY_RUN = !!parsedArgs['dry-run'];
+// DONE
+console.log(chalk.green.bold('\n### SUCCESSFULLY RELEASED AND PUBLISHED ALL PACKAGES ###'));
 
 
 
