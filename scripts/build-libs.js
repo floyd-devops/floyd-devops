@@ -34,8 +34,6 @@ const buildOrder = Object.keys(libsDeps).sort((a, b) => {
 });
 
 // console.log(chalk.underline(`Build order: ${buildOrder}`));
-console.log(chalk.blue.bold.underline("BUILD LIBRARIES"));
-// console.log(chalk.blue.bold("------------------"));
 buildOrder.forEach(lib => {
   try {
     console.log(chalk.blue.bold(`${buildOrder.indexOf(lib) + 1}.${getLibAlias(lib)}`));
@@ -46,3 +44,5 @@ buildOrder.forEach(lib => {
     throw new Error();
   }
 });
+
+
