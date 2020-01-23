@@ -165,6 +165,21 @@ const options = {
   ],
   increment: parsedVersion.version,
   requireUpstream: false,
+  git: {
+    requireCleanWorkingDir: true,
+    requireUpstream: true,
+    addUntrackedFiles: false,
+    commit: true,
+    commitMessage: "chore(release): ${version}",
+    commitArgs: "",
+    tag: true,
+    tagName: "${version}",
+    tagAnnotation: "${version}",
+    tagArgs: "",
+    push: true,
+    pushArgs: "",
+    pushRepo: "origin"
+  },
   github: {
     preRelease: parsedVersion.isPrerelease,
     releaseName: "chore(release): ${version}",
