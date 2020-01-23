@@ -1,7 +1,7 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const chalk = require('chalk');
-const libs = require('./config').libs;
+const libs = require('../config').libs;
 
 // Fetch lib dependencies by examining peerDependencies
 const libsDeps = libs.reduce((obj, lib) => {

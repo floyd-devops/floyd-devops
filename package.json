@@ -29,12 +29,8 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "build:libs": "node scripts/build-libs.js",
-    "build:libs:order": "node scripts/build-libs.js $(nx affected:libs)",
-    "release:libs": "lerna version --conventional-commits --force-publish",
-    "publish:libs": "yarn build:libs && yarn release:libs && lerna publish",
-    "publish:all": "yarn build:libs && lerna publish --conventional-commits --force-publish",
-    "floyd-release": "node scripts/floyd-release.js"
+    "floyd-build": "node scripts/build/build-libs.js",
+    "floyd-release": "node scripts/floyd-publish.js"
   },
   "dependencies": {
     "@angular/animations": "^8.2.0",
