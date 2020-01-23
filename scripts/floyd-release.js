@@ -1,19 +1,19 @@
+const chalk = require('chalk');
 const yargsParser = require('yargs-parser');
-const releaseIt = require('release-it');
 const childProcess = require('child_process');
-const fs = require('fs');
-const path = require('path');
 const {execSync} = require('child_process');
 
 const parsedArgs = yargsParser(process.argv, {
-  boolean: ['exact', 'help'],
+  boolean: ['force', 'yes', 'dry-run', 'help'],
   alias: {
+    f: 'force',
+    y: 'yes',
     e: 'dry-run',
     h: 'help'
   }
 });
 
-console.log('parsedArgs', parsedArgs);
+// console.log('parsedArgs', parsedArgs);
 
 if (!parsedArgs.local && !process.env.GH_TOKEN) {
   console.error('process.env.GH_TOKEN is not set');
@@ -23,12 +23,12 @@ if (!parsedArgs.local && !process.env.GH_TOKEN) {
 if (parsedArgs.help) {
   console.log(`
       Usage: yarn floyd-release <version> [options]
-      Example: "yarn floyd-release major|minor|patch"
-      The acceptable format for the version number is:
-      {number}.{number}.{number}[-{alpha|beta|rc}.{number}]
-      The subsection of the version number in []s is optional, and, if used, will be used to
-      mark the release as "prerelease" on GitHub, and tag it with "next" on npm.
+      Example: "yarn floyd-release major --force --yes"
+
+      The acceptable values for the version are: major | minor | patch
       Options:
+        --force             Bump version and publish all packages regardless of changes
+        --yes               Automatic yes on prompt for publishing packages
         --dry-run           Do not touch or write anything, but show the commands
         --help              Show this message
     `);
@@ -71,8 +71,9 @@ childProcess.execSync(buildCommand, {
 
 // RELEASE
 // execSync('lerna publish --conventional-commits --force-publish');
+console.log(chalk.underline.green('RELEASE & PUBLISH'));
 try {
-  execSync(`lerna publish --conventional-commits ${parsedVersion.version}`, {stdio: 'inherit'});
+  execSync(`lerna publish --conventional-commits ${parsedVersion.version} ${parsedArgs.force ? '--force-publish' : ''}` , {stdio: 'inherit'});
 } catch (e) {
   throw e;
 }

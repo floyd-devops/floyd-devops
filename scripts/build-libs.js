@@ -37,7 +37,7 @@ const buildOrder = Object.keys(libsDeps).sort((a, b) => {
 buildOrder.forEach(lib => {
   try {
     console.log(chalk.blue.bold(`${buildOrder.indexOf(lib) + 1}.${getLibAlias(lib)}`));
-    execSync('ng build ' + lib);
+    execSync('ng build ' + lib, {stdio: 'inherit'});
     console.log(chalk.green('SUCCESS'));
   } catch (e) {
     console.log(chalk.red('FAILED'));
