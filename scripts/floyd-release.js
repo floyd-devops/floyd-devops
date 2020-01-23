@@ -24,7 +24,8 @@ if (parsedArgs.help) {
       Usage: yarn floyd-release <version> [options]
       Example: "yarn floyd-release major --force --yes"
 
-      The acceptable values for the version are: major | minor | patch
+      The acceptable values for the version are: major | minor | patch | semantic.
+      Version 'semantic' calculates version bump from commits while others are used for fixed versioning.
       Options:
         --force             Bump version and publish all packages regardless of changes
         --yes               Automatic yes on prompt for publishing packages
@@ -64,7 +65,7 @@ if (!parsedVersion.isValid) {
 //  BUILD
 buildLibs();
 
-// RELEASE
+// RELEASE & PUBLISH
 releaseAndPublish(parsedVersion.version, parsedArgs.force, parsedArgs. yes);
 
 // DONE

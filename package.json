@@ -6,7 +6,7 @@
     "ng": "ng",
     "nx": "nx",
     "lerna": "lerna",
-    "cz": "git-cz",
+    "commit": "git-cz",
     "preinstall": "node tools/yarn/check-yarn.js",
     "start": "ng serve",
     "build": "ng build",

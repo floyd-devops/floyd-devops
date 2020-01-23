@@ -3,6 +3,7 @@ const fs = require('fs');
 const chalk = require('chalk');
 const libs = require('./config').libs;
 
+// Fetch lib dependencies by examining peerDependencies
 const libsDeps = libs.reduce((obj, lib) => {
   const packageFile = `./libs/${lib}/package.json`;
   if (fs.existsSync(packageFile)) {
@@ -15,6 +16,7 @@ const libsDeps = libs.reduce((obj, lib) => {
   return obj;
 }, {});
 
+// Calculate build order from dependencies
 const buildOrder = Object.keys(libsDeps).sort((a, b) => {
   const aDep = libsDeps[a], bDep = libsDeps[b];
   if (aDep.deps.includes(bDep.name)) {
@@ -26,6 +28,7 @@ const buildOrder = Object.keys(libsDeps).sort((a, b) => {
   return 1;
 });
 
+// Build libs in correct order
 const buildLibs = () => {
   console.log('\n#########################');
   console.log('BUILDING LIBS AS PACKAGES');
@@ -33,13 +36,16 @@ const buildLibs = () => {
   buildOrder.forEach(lib => {
     try {
       let buildCommand = 'ng build ' + lib;
-      console.log(`> ${chalk.blue(buildCommand)}`);
+      console.log(`\n> ${chalk.blue(buildCommand)}\n`);
       execSync(buildCommand, {stdio: 'inherit'});
     } catch (e) {
       throw new Error();
     }
   });
 };
+
+// Used for directly invoking buildLibs
+buildLibs();
 
 module.exports = {
   buildLibs
