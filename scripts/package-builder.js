@@ -1,7 +1,7 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const chalk = require('chalk');
-const libs = require('../config').libs;
+const libs = require('./config').libs;
 
 // Fetch lib dependencies by examining peerDependencies
 const libsDeps = libs.reduce((obj, lib) => {
@@ -29,7 +29,7 @@ const buildOrder = Object.keys(libsDeps).sort((a, b) => {
 });
 
 // Build libs in correct order
-const buildLibs = () => {
+const packageBuilder = () => {
   console.log('\n#########################');
   console.log('BUILDING LIBS AS PACKAGES');
   console.log('#########################\n');
@@ -48,7 +48,7 @@ const buildLibs = () => {
 
 
 module.exports = {
-  buildLibs
+  buildLibs: packageBuilder
 };
 
 

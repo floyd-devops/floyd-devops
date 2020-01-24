@@ -1,8 +1,8 @@
 const chalk = require('chalk');
 const yargsParser = require('yargs-parser');
 const childProcess = require('child_process');
-const {buildLibs} = require('./build/build-libs');
-const {releaseAndPublish} = require('./publish/release-publish-libs');
+const {buildLibs} = require('./package-builder');
+const {releaseAndPublish} = require('./package-publisher');
 
 const parsedArgs = yargsParser(process.argv, {
   boolean: ['force', 'yes', 'dry-run', 'help'],

@@ -29,8 +29,8 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "floyd-build": "node scripts/floyd-build.js",
-    "floyd-release": "node scripts/floyd-publish.js"
+    "floyd:build": "node scripts/build.js",
+    "floyd:release": "node scripts/publish.js"
   },
   "dependencies": {
     "@angular/animations": "^8.2.0",
