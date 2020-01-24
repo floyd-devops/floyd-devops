@@ -5,9 +5,9 @@ const {buildLibs} = require('./package-builder');
 const {releaseAndPublish} = require('./package-publisher');
 
 const parsedArgs = yargsParser(process.argv, {
-  boolean: ['force', 'yes', 'dry-run', 'help'],
+  boolean: ['yes', 'dry-run', 'help'],
   alias: {
-    f: 'force',
+    // f: 'force',
     y: 'yes',
     e: 'dry-run',
     h: 'help'
@@ -27,7 +27,6 @@ if (parsedArgs.help) {
       The acceptable values for the version are: major | minor | patch | semantic.
       Version 'semantic' calculates version bump from commits while others are used for fixed versioning.
       Options:
-        --force             Bump version and publish all packages regardless of changes
         --yes               Automatic yes on prompt for publishing packages
         --dry-run           Do not touch or write anything, but show the commands
         --help              Show this message
@@ -43,7 +42,7 @@ childProcess.execSync('git fetch --all', {
 function parseVersion(version) {
   return {
     version,
-    isValid: version === 'major' || version === 'minor' || version === 'patch' || version === 'semantic'
+    isValid: version === 'major' || version === 'minor' || version === 'patch' || version === ''
   };
 }
 
@@ -58,15 +57,13 @@ if (!parsedVersion.isValid) {
     `Please run "yarn floyd-release --help" for details on the acceptable version format.\n`
   );
   return process.exit(1);
-} else {
-  console.log('Parsed version: ', JSON.stringify(parsedVersion));
 }
 
 //  BUILD
 buildLibs();
 
 // RELEASE & PUBLISH
-releaseAndPublish(parsedVersion.version, parsedArgs.force, parsedArgs. yes);
+releaseAndPublish(parsedVersion.version, parsedArgs. yes);
 
 
 
