@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const updateRepoVersion = () => {
-  const fileName = path.join(__dirname, '../../package.json');
+  const fileName = path.join(__dirname, '../package.json');
   console.log(fileName);
   let file = require(fileName);
   file.version = execSync('git describe').toString().substr(1).replace('\n', '');
@@ -23,7 +23,7 @@ const releaseAndPublish = (version, force, yes) => {
   console.log('\n########################');
   console.log('RELEASING AND PUBLISHING');
   console.log('########################\n');
-  let relPubCommand = `lerna publish --conventional-commits ${version} --force-publish ${yes ? '--yes' : ''}`;
+  let relPubCommand = `lerna publish ${version ? version : ''} --force-publish ${yes ? '--yes' : ''}`;
   console.log(`> ${relPubCommand}`);
   try {
     execSync(relPubCommand , {stdio: 'inherit'});
