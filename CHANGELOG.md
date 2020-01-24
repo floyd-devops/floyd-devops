@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/floyd-devops/floyd-devops/compare/v0.11.1...v0.12.0) (2020-01-24)
+
+
+### Bug Fixes
+
+* **components:** asd asd asd ([558357b](https://github.com/floyd-devops/floyd-devops/commit/558357b77d4836f6eba34e4a3b25b7e305c2317c))
+
+
+### Features
+
+* **build:** bla bla ([5e04c90](https://github.com/floyd-devops/floyd-devops/commit/5e04c905f8e2c93b2460f9b3f15ebfcb79b4d330))
+* **common:** dummy msg ([9779b10](https://github.com/floyd-devops/floyd-devops/commit/9779b102ed3a9e2f8735194fb14dc0e3d97b4b86))
+
+
+
+
+
 ## [0.11.1](https://github.com/floyd-devops/floyd-devops/compare/v0.11.0...v0.11.1) (2020-01-24)
 
 **Note:** Version bump only for package floyd-devops

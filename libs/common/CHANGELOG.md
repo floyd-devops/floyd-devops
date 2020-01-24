@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/floyd-devops/floyd-devops/compare/v0.11.1...v0.12.0) (2020-01-24)
+
+
+### Features
+
+* **common:** dummy msg ([9779b10](https://github.com/floyd-devops/floyd-devops/commit/9779b102ed3a9e2f8735194fb14dc0e3d97b4b86))
+
+
+
+
+
 ## [0.11.1](https://github.com/floyd-devops/floyd-devops/compare/v0.11.0...v0.11.1) (2020-01-24)
 
 **Note:** Version bump only for package @floyd-devops/common
