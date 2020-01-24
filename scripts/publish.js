@@ -42,7 +42,7 @@ childProcess.execSync('git fetch --all', {
 function parseVersion(version) {
   return {
     version,
-    isValid: version === 'major' || version === 'minor' || version === 'patch' || version === ''
+    isValid: version === 'major' || version === 'minor' || version === 'patch' || version === undefined
   };
 }
 
