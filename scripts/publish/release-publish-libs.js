@@ -1,18 +1,22 @@
 const {execSync} = require('child_process');
 const chalk = require('chalk');
 const fs = require('fs');
+const path = require('path');
 
 const updateRepoVersion = () => {
-  const fileName = '../../package.json';
+  const fileName = path.join(__dirname, '../../package.json');
+  console.log(fileName);
   let file = require(fileName);
-  file.version = execSync('git describe').toString().substr(1);
-
-  fs.writeFile(fileName, JSON.stringify(file), function (err) {
-    if (err) return console.log(err);
-    // execSync('git add package.json');
-    // execSync(`git commit -m "chore(release): update repository version -> ${file.version}"`);
-    // execSync('git push -u origin master');
-  });
+  file.version = execSync('git describe').toString().substr(1).replace('\n', '');
+  try {
+    fs.writeFileSync(fileName, JSON.stringify(file, null, 2));
+    console.log(chalk.blue.bold('Updating repository version'));
+    execSync('git add package.json');
+    execSync(`git commit -m "chore(release): bump repository version -> ${file.version}"`);
+    execSync('git push -u origin master');
+  } catch (e) {
+    throw e;
+  }
 };
 
 const releaseAndPublish = (version, force, yes) => {
