@@ -1,6 +1,6 @@
 {
   "name": "floyd-devops",
-  "version": "2.0.0-next.0",
+  "version": "2.0.0-next.0-1-ge4b4af2",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
