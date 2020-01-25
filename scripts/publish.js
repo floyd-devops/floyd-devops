@@ -24,7 +24,7 @@ if (parsedArgs.help) {
       Usage: yarn floyd-release <version> [options]
       Example: "yarn floyd-release major --force --yes"
 
-      The acceptable values for the version are: major | minor | patch | premajor.
+      The acceptable values for the version are: major | minor | patch | premajor | graduate.
       Version 'semantic' calculates version bump from commits while others are used for fixed versioning.
       Options:
         --yes               Automatic yes on prompt for publishing packages
@@ -40,11 +40,12 @@ childProcess.execSync('git fetch --all', {
 });
 
 function parseVersion(version) {
-  const validVersions = ['major', 'minor', 'patch', 'premajor', undefined];
+  const validVersions = ['major', 'minor', 'patch', 'premajor', 'graduate', undefined];
   return {
     version,
     isValid: validVersions.indexOf(version) !== -1,
-    isPreRelease: version !== undefined && version.startsWith('pre')
+    isPreRelease: version !== undefined && version.startsWith('pre'),
+    isGraduate: version === 'graduate'
   };
 }
 
