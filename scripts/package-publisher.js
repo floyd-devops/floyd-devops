@@ -23,7 +23,7 @@ const releaseAndPublish = (version, force, yes) => {
   console.log('\n########################');
   console.log('RELEASING AND PUBLISHING');
   console.log('########################\n');
-  let relPubCommand = `lerna publish ${version ? version : ''} --force-publish ${yes ? '--yes' : ''}`;
+  let relPubCommand = `lerna publish ${version.version ? version.version : ''} ${version.isPreRelease ? '--preid next' : ''} --force-publish ${yes ? '--yes' : ''}`;
   console.log(`> ${relPubCommand}`);
   try {
     execSync(relPubCommand , {stdio: 'inherit'});
