@@ -1,3 +1,3 @@
-const {buildLibs} = require('./package-builder');
+const { buildLibs } = require('./package-builder');
 
 buildLibs();

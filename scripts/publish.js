@@ -1,8 +1,8 @@
 const chalk = require('chalk');
 const yargsParser = require('yargs-parser');
 const childProcess = require('child_process');
-const {buildLibs} = require('./package-builder');
-const {releaseAndPublish} = require('./package-publisher');
+const { buildLibs } = require('./package-builder');
+const { releaseAndPublish } = require('./package-publisher');
 
 const parsedArgs = yargsParser(process.argv, {
   boolean: ['yes', 'dry-run', 'help'],
@@ -53,7 +53,7 @@ const parsedVersion = parseVersion(parsedArgs._[2]);
 if (!parsedVersion.isValid) {
   console.error(
     chalk.red(
-    `\nError:\nThe specified version is not valid. You specified: "${parsedVersion.version}"`
+      `\nError:\nThe specified version is not valid. You specified: "${parsedVersion.version}"`
     )
   );
   console.error(
@@ -66,10 +66,4 @@ if (!parsedVersion.isValid) {
 buildLibs();
 
 // RELEASE & PUBLISH
-releaseAndPublish(parsedVersion, parsedArgs. yes);
-
-
-
-
-
-
+releaseAndPublish(parsedVersion, parsedArgs.yes);

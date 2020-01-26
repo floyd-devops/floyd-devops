@@ -18,7 +18,8 @@ const libsDeps = libs.reduce((obj, lib) => {
 
 // Calculate build order from dependencies
 const buildOrder = Object.keys(libsDeps).sort((a, b) => {
-  const aDep = libsDeps[a], bDep = libsDeps[b];
+  const aDep = libsDeps[a],
+    bDep = libsDeps[b];
   if (aDep.deps.includes(bDep.name)) {
     return 1;
   }
@@ -37,7 +38,7 @@ const packageBuilder = () => {
     try {
       let buildCommand = 'ng build ' + lib;
       console.log(`\n> ${chalk.blue(buildCommand)}\n`);
-      execSync(buildCommand, {stdio: 'inherit'});
+      execSync(buildCommand, { stdio: 'inherit' });
     } catch (e) {
       throw new Error();
     }
@@ -45,12 +46,6 @@ const packageBuilder = () => {
   console.log(chalk.green.bold('\n### SUCCESSFULLY BUILT ALL PACKAGES ###'));
 };
 
-
-
 module.exports = {
   buildLibs: packageBuilder
 };
-
-
-
-

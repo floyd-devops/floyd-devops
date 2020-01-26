@@ -1,10 +1,13 @@
-const {execSync} = require('child_process');
+const { execSync } = require('child_process');
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
 
 const getLatestTagVersion = () => {
-  return execSync('git describe').toString().substr(1).replace('\n', '');
+  return execSync('git describe')
+    .toString()
+    .substr(1)
+    .replace('\n', '');
 };
 
 const updateRepoVersion = () => {
@@ -27,11 +30,15 @@ const releaseAndPublish = (version, force, yes) => {
   console.log('\n########################');
   console.log('RELEASING AND PUBLISHING');
   console.log('########################\n');
-  let relPubCommand = `lerna publish ${version.version && version.version !== 'graduate' ? version.version : ''} ${version.isGraduate ? '--conventional-graduate' : ''} ${version.isPreRelease ? '--preid next --dist-tag next' : ''} --force-publish ${yes ? '--yes' : ''}`;
+  let relPubCommand = `lerna publish ${
+    version.version && version.version !== 'graduate' ? version.version : ''
+  } ${version.isGraduate ? '--conventional-graduate' : ''} ${
+    version.isPreRelease ? '--preid next --dist-tag next' : ''
+  } --force-publish ${yes ? '--yes' : ''}`;
   console.log(`> ${relPubCommand}`);
   try {
     const oldVersion = getLatestTagVersion();
-    execSync(relPubCommand , {stdio: 'inherit'});
+    execSync(relPubCommand, { stdio: 'inherit' });
     const newVersion = getLatestTagVersion();
     if (oldVersion !== newVersion) {
       updateRepoVersion();
@@ -39,7 +46,6 @@ const releaseAndPublish = (version, force, yes) => {
     } else {
       console.log(chalk.blue('### Publish Aborted ###'));
     }
-
   } catch (e) {
     throw e;
   }

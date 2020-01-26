@@ -21,10 +21,7 @@
             "polyfills": "apps/playground/src/polyfills.ts",
             "tsConfig": "apps/playground/tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "apps/playground/src/favicon.ico",
-              "apps/playground/src/assets"
-            ],
+            "assets": ["apps/playground/src/favicon.ico", "apps/playground/src/assets"],
             "styles": ["apps/playground/src/styles.scss"],
             "scripts": []
           },
@@ -80,10 +77,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/playground/tsconfig.app.json",
-              "apps/playground/tsconfig.spec.json"
-            ],
+            "tsConfig": ["apps/playground/tsconfig.app.json", "apps/playground/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!apps/playground/**"]
           }
         },
@@ -140,10 +134,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/core/tsconfig.lib.json",
-              "libs/core/tsconfig.spec.json"
-            ],
+            "tsConfig": ["libs/core/tsconfig.lib.json", "libs/core/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!libs/core/**"]
           }
         },
@@ -178,10 +169,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/common/tsconfig.lib.json",
-              "libs/common/tsconfig.spec.json"
-            ],
+            "tsConfig": ["libs/common/tsconfig.lib.json", "libs/common/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!libs/common/**"]
           }
         },
@@ -216,10 +204,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/components/tsconfig.lib.json",
-              "libs/components/tsconfig.spec.json"
-            ],
+            "tsConfig": ["libs/components/tsconfig.lib.json", "libs/components/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!libs/components/**"]
           }
         },
