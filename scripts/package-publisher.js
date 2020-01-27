@@ -20,7 +20,7 @@ const updateRepoVersion = () => {
     console.log(chalk.blue.bold('Updating repository version'));
     execSync('git add package.json');
     execSync(`git commit -m "chore(release): bump repository version -> ${file.version}"`);
-    execSync('git push -u origin master');
+    execSync('git push -u origin HEAD');
   } catch (e) {
     throw e;
   }
@@ -33,7 +33,9 @@ const releaseAndPublish = (version, force, yes) => {
   let relPubCommand = `lerna publish ${
     version.version && version.version !== 'graduate' ? version.version : ''
   } ${version.isGraduate ? '--conventional-graduate' : ''} ${
-    version.isPreRelease ? '--preid next --dist-tag next' : ''
+    version.isPreRelease || (getLatestTagVersion().includes('-next.') && !version.isGraduate)
+      ? '--preid next --dist-tag next'
+      : ''
   } --force-publish ${yes ? '--yes' : ''}`;
   console.log(`> ${relPubCommand}`);
   try {

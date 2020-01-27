@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-next.3](https://github.com/floyd-devops/floyd-devops/compare/v3.0.0-next.2...v3.0.0-next.3) (2020-01-27)
+
+**Note:** Version bump only for package @floyd-devops/components
+
+# [3.0.0-next.2](https://github.com/floyd-devops/floyd-devops/compare/v3.0.0-next.1...v3.0.0-next.2) (2020-01-27)
+
+**Note:** Version bump only for package @floyd-devops/components
+
+# [3.0.0-next.1](https://github.com/floyd-devops/floyd-devops/compare/v3.0.0-next.0...v3.0.0-next.1) (2020-01-27)
+
+**Note:** Version bump only for package @floyd-devops/components
+
+# [3.0.0-next.0](https://github.com/floyd-devops/floyd-devops/compare/v2.0.0...v3.0.0-next.0) (2020-01-27)
+
+**Note:** Version bump only for package @floyd-devops/components
+
 # [2.0.0](https://github.com/floyd-devops/floyd-devops/compare/v2.0.0-next.1...v2.0.0) (2020-01-25)
 
 ### Bug Fixes
