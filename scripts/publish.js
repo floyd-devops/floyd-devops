@@ -40,7 +40,16 @@ childProcess.execSync('git fetch --all', {
 });
 
 function parseVersion(version) {
-  const validVersions = ['major', 'minor', 'patch', 'next', 'graduate', 'from-git', 'from-package', undefined];
+  const validVersions = [
+    'major',
+    'minor',
+    'patch',
+    'next',
+    'graduate',
+    'from-git',
+    'from-package',
+    undefined
+  ];
   return {
     version,
     isValid: validVersions.indexOf(version) !== -1,
