@@ -39,10 +39,12 @@ const packageBuilder = () => {
       let buildCommand = 'ng build ' + lib;
       console.log(`\n> ${chalk.blue(buildCommand)}\n`);
       execSync(buildCommand, { stdio: 'inherit' });
+      fs.copyFileSync('./LICENSE.md', `./dist/libs/${lib}/LICENSE.md`);
     } catch (e) {
       throw new Error();
     }
   });
+
   console.log(chalk.green.bold('\n### SUCCESSFULLY BUILT ALL PACKAGES ###'));
 };
 
