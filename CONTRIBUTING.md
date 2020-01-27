@@ -146,10 +146,10 @@ to read on GitHub as well as in various git tools.
 
 The footer should contain a [closing reference to an issue](https://help.github.com/articles/closing-issues-via-commit-messages/) if any.
 
-Samples: (even more [samples](https://github.com/angular/angular/commits/master))
+Samples: (even more [samples](https://github.com/floyd-devops/floyd-devops/commits/master))
 
 ```
-docs(changelog): update changelog to beta.5
+docs(changelog): update changelog to next.5
 ```
 ```
 fix(release): need to depend on latest rxjs and zone.js
@@ -211,16 +211,8 @@ A detailed explanation can be found in this [document][commit-message-format].
 
 <hr>
 
-[angular-group]: https://groups.google.com/forum/#!forum/angular
-[coc]: https://github.com/angular/code-of-conduct/blob/master/CODE_OF_CONDUCT.md
-[commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
-[corporate-cla]: http://code.google.com/legal/corporate-cla-v1.0.html
-[dev-doc]: https://github.com/floyd-ng/floyd-ng/blob/master/docs/DEVELOPER.md
+[commit-message-format]: https://www.conventionalcommits.org/en/v1.0.0/
+[dev-doc]: https://github.com/floyd-devops/floyd-devops/blob/master/docs/DEVELOPER.md
 [github]: https://github.com/floyd-devops/floyd-devops
-[gitter]: https://gitter.im/angular/angular
-[individual-cla]: http://code.google.com/legal/individual-cla-v1.0.html
 [js-style-guide]: https://google.github.io/styleguide/jsguide.html
-[jsfiddle]: http://jsfiddle.net
-[plunker]: http://plnkr.co/edit
-[runnable]: http://runnable.com
 [stackoverflow]: http://stackoverflow.com/questions/tagged/angular
