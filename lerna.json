@@ -1,12 +1,13 @@
 {
-  "packages": ["libs/*"],
-  "version": "2.0.0",
+  "packages": [
+    "libs/*"
+  ],
+  "version": "3.0.0-next.0",
   "command": {
     "publish": {
       "conventionalCommits": true
     },
     "version": {
-      "allowBranch": ["master"],
       "message": "chore(release): publish %s"
     }
   }
