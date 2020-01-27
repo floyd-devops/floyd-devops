@@ -21,15 +21,15 @@ if (!parsedArgs.local && !process.env.GH_TOKEN) {
 
 if (parsedArgs.help) {
   console.log(`
-      Usage: yarn floyd-release <version> [options]
-      Example: "yarn floyd-release major --force --yes"
+    Usage: yarn floyd-release <version> [options]
+    Example: "yarn floyd-release major --yes"
 
-      The acceptable values for the version are: major | minor | patch | premajor | graduate.
-      Version 'semantic' calculates version bump from commits while others are used for fixed versioning.
-      Options:
-        --yes               Automatic yes on prompt for publishing packages
-        --dry-run           Do not touch or write anything, but show the commands
-        --help              Show this message
+    Specifying version is not required as it will be calculated from commits.
+    The acceptable values for the version are: major | minor | patch | next | graduate | from-git | from-package.
+
+    Options:
+      --yes               Automatic yes on prompt for publishing packages
+      --help              Show this message
     `);
   process.exit(0);
 }
@@ -40,7 +40,7 @@ childProcess.execSync('git fetch --all', {
 });
 
 function parseVersion(version) {
-  const validVersions = ['major', 'minor', 'patch', 'premajor', 'graduate', undefined];
+  const validVersions = ['major', 'minor', 'patch', 'next', 'graduate', 'from-git', 'from-package', undefined];
   return {
     version,
     isValid: validVersions.indexOf(version) !== -1,
