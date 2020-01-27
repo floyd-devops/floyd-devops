@@ -1,6 +1,6 @@
 {
   "name": "@floyd-devops/core",
-  "version": "3.0.0-next.1",
+  "version": "3.0.0-next.2",
   "peerDependencies": {
     "@angular/common": "^8.2.11",
     "@angular/core": "^8.2.11"
